@@ -1,0 +1,77 @@
+@forward "./null";
+@forward "./placeholders";
+@forward "./fonts";
+@forward "./constants";
+@forward "./theme";
+@use "./constants" as c;
+@use "./theme" as t;
+
+/* Anchor */
+:global(.anchor) {
+  scroll-margin-top: c.$header-h;
+}
+
+/* Elements hover / active */
+:global(.clickable):not(:disabled) {
+  &:hover {
+    transform: c.$clickable-transform-hover;
+  }
+
+  &:active {
+    transform: c.$clickable-transform-active;
+  }
+}
+
+/* Content section w1240px */
+
+section {
+  margin-bottom: c.$section-bottom-margin;
+  padding: t.$br-medium;
+  overflow: hidden;
+  background-color: t.$bg-grey-l0;
+  border-radius: t.$br-medium;
+  box-shadow: t.$box-shadow-medium;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    ol {
+      list-style-type: lower-alpha;
+    }
+
+    li {
+      margin-left: c.$content-par-indent;
+    }
+  }
+
+  p {
+    text-indent: c.$content-par-indent;
+  }
+}
+
+/* Headers / p */
+
+h1 {
+  font-size: c.$h1-fz;
+}
+
+h2 {
+  font-size: c.$h2-fz;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: c.$scrollbar-w;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: t.$bg-grey;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: t.$bg-black;
+}

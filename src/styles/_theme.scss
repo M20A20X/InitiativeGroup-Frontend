@@ -1,0 +1,25 @@
+@use "./constants" as с;
+
+$-vw1px: с.mn(1px);
+$-vw4px: calc(4 * $-vw1px);
+$bg-black: #0e0e0e;
+$bg-cyan: #0d99ff;
+$bg-grey: #25252d;
+$bg-grey-l0: #3a3a45;
+$bg-grey-l1: #686a77;
+$bg-grey-l2: #b7c2d4;
+$bg-pink: #c3b1bd;
+$txt-black: $bg-black;
+$txt-green: #4aaf48;
+$txt-grey: #89919f;
+$txt-pink: $bg-pink;
+$txt-white: #fff;
+$txt-yellow: #ffc120;
+$border-small: $-vw1px solid $bg-grey-l1;
+$border-medium: $-vw4px solid $bg-grey-l1;
+$br-high: min(50px);
+$br-medium: с.$fieldset-h-padding;
+$br-small: min(5px);
+$box-shadow-medium: 0 $-vw4px $-vw4px $bg-black;
+$box-shadow-small: 0 $-vw1px $bg-black;
+$text-shadow-color: $-vw1px $-vw1px $-vw4px $bg-black;

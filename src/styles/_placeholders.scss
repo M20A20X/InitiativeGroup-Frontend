@@ -1,0 +1,28 @@
+/* Flex align */
+%v-c {
+  display: flex;
+  align-items: center;
+}
+
+%v-c-h-sb {
+  @extend %v-c;
+
+  justify-content: space-between;
+}
+
+%v-c-h-sa {
+  @extend %v-c;
+
+  justify-content: space-around;
+}
+
+%v-c-h-c {
+  @extend %v-c;
+
+  justify-content: center;
+}
+
+%fd-col {
+  display: flex;
+  flex-direction: column;
+}
