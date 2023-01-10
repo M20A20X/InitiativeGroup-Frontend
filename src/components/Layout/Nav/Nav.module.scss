@@ -1,0 +1,39 @@
+@use "styles/global" as g;
+
+.nav {
+  height: 100%;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    height: inherit;
+    font-size: g.$header-fz;
+    font-family: sans-serif;
+  }
+
+  &Btn {
+    @extend %v-c;
+
+    border-radius: g.$br-small;
+
+    a {
+      @extend %v-c;
+
+      width: fit-content;
+      height: 100%;
+      padding: 0 g.mn(25px);
+    }
+
+    &.profile {
+      justify-content: center;
+      width: g.mn(0.125 * g.$max-screen-width);
+
+      a {
+        height: auto;
+        padding: g.mn(10px) g.$br-medium;
+        background-color: g.$bg-cyan;
+        border-radius: g.$br-medium;
+      }
+    }
+  }
+}

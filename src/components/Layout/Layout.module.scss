@@ -1,0 +1,115 @@
+@use "styles/global" as g;
+
+.wrapper {
+  @extend %fd-col;
+
+  min-height: 100vh;
+  margin: auto;
+  font-family: g.$default-ff;
+  background-color: g.$bg-black;
+}
+
+/* Header */
+.header {
+  @extend %v-c-h-sb;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: g.$header-h;
+  color: g.$txt-white;
+  font-size: g.$header-fz;
+  font-style: italic;
+  background-color: inherit;
+  box-shadow: g.$box-shadow-medium;
+}
+
+.logo {
+  &Link {
+    margin-left: g.mn(20px);
+
+    figure {
+      @extend %v-c;
+    }
+  }
+
+  &Icon {
+    height: 0.7 * g.$header-h;
+    border-radius: g.$br-small;
+  }
+
+  &Text {
+    display: flex;
+    width: min-content;
+    margin-left: 13px;
+    color: g.$txt-grey;
+    font-size: inherit;
+    font-family: Aleo, sans-serif;
+    line-height: 1.3em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+
+    $border: g.mn(1px) solid g.$bg-grey-l1;
+
+    border-top: $border;
+    border-bottom: $border;
+  }
+}
+
+/* Main w1440px */
+.main {
+  display: flex;
+  flex-grow: 1;
+
+  &::before,
+  &::after {
+    display: flex;
+    flex-grow: 1;
+    background: url("/assets/images/main_background.png") fixed;
+    background-size: g.$main-bg-size;
+    filter: g.$main-p-filter;
+    content: "";
+  }
+
+  &::after {
+    background-position-x: 0.5 * g.$main-bg-size;
+  }
+}
+
+/* Content w1440px  */
+.content {
+  position: relative;
+  z-index: 1;
+  width: g.mn(g.$content-w);
+  padding: g.$content-p;
+  color: g.$txt-white;
+  font-size: g.$content-fz;
+  background-color: g.$bg-grey;
+}
+
+/* Footer */
+.footer {
+  @extend %fd-col;
+
+  align-items: flex-end;
+  justify-content: center;
+  height: g.$footer-h;
+  padding-right: g.mn(20px);
+  color: g.$txt-white;
+  font-size: g.$footer-fz;
+
+  .footerHeart,
+  .footerCopyright {
+    color: inherit;
+  }
+
+  &:hover {
+    .footerHeart {
+      color: cyan;
+    }
+
+    .footerCopyright {
+      color: yellow;
+    }
+  }
+}
