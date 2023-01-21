@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+
+import { AuthContext } from 'context/Auth.context';
 
 import { TCommon } from 'types/layout';
 
@@ -12,9 +14,11 @@ interface NavProps {
 
 export const Nav: FC<NavProps> = (props) => {
     const { navLinks } = props;
+    const authContext = useContext(AuthContext);
 
     const navLinkElems = (() => {
         const { profile } = navLinks;
+        const isLoggedIn = authContext?.isLoggedIn;
 
         const elems = navLinks.other.map((link) => (
             <NavLinkElem
@@ -27,10 +31,10 @@ export const Nav: FC<NavProps> = (props) => {
             <NavLinkElem
                 key={JSON.stringify(profile)}
                 elem={{
-                    href: profile.href,
-                    name: profile.defaultName,
+                    href: isLoggedIn ? profile.href : '#',
+                    name: isLoggedIn ? profile.loggedName : profile.defaultName,
                     classNames: [s.navBtn, s.profile],
-                    clickHandler: () => {}
+                    clickHandler: async () => {}
                 }}
             />
         );

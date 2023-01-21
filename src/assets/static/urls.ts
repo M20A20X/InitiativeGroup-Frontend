@@ -10,3 +10,10 @@ export const PAGE_URL = {
         tests: 'tests'
     }
 };
+
+const API_ROOT = 'http://192.168.0.101:5000/';
+const API_URL = {
+    login: 'auth/login'
+};
+
+export const getApi = (endpoint: keyof typeof API_URL) => API_ROOT + API_URL[endpoint];
