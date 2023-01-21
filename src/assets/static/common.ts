@@ -1,6 +1,8 @@
 import { PAGE_URL } from 'assets/static/urls';
 import logoIcon from 'assets/images/logo.png';
 
+export const PAGE_REDIRECT_TIME = 3000;
+
 export const COMMON = {
     logoIcon,
     name: 'Initiative Group',
