@@ -1,0 +1,34 @@
+@use "styles/global" as g;
+
+.console {
+  @extend %fd-col;
+
+  padding: 0;
+  color: g.$txt-green;
+  background-color: g.$bg-grey-l0;
+  border-radius: g.$br-high g.$br-high g.$br-medium g.$br-medium;
+
+  &Util {
+    width: 100%;
+    height: g.mn(300px);
+    padding: g.$br-high g.$br-high 0 g.$br-high;
+    overflow-y: auto;
+    color: inherit;
+    word-break: break-all;
+    background-color: g.$bg-grey-l0;
+    border-bottom: 1px solid g.$bg-grey-l1;
+    resize: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &Status {
+    @extend %v-c;
+
+    padding: g.$br-small g.$br-medium g.$br-medium g.$br-high;
+    word-break: break-all;
+    background-color: g.$bg-grey-l0;
+  }
+}

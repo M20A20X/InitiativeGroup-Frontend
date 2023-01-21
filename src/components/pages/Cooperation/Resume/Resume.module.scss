@@ -1,0 +1,37 @@
+@use "styles/global" as g;
+
+.upload {
+  padding: 0;
+  border-radius: g.$br-medium g.$br-medium g.$br-high g.$br-high;
+}
+
+.uploadTitle {
+  display: flex;
+  padding: g.$br-medium g.$br-high;
+  background-color: g.$bg-grey-l1;
+}
+
+.form {
+  @extend %fd-col;
+
+  &Status {
+    @extend %v-c-h-sa;
+  }
+
+  &Input {
+    display: none;
+  }
+
+  &AltUpload {
+    @extend %v-c-h-c;
+
+    padding: g.mn(30px) 0;
+    color: g.$txt-pink;
+    cursor: pointer;
+  }
+
+  &Submit {
+    padding: g.$br-small;
+    background-color: g.$bg-grey-l1;
+  }
+}
