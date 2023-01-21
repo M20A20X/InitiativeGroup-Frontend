@@ -1,11 +1,14 @@
 import React from 'react';
 
 import { AuthProvider } from 'components/providers/AuthProvider';
+import { ModalProvider } from 'components/providers/ModalProvider';
 import { RouterProvider } from 'components/providers/RouterProvider';
 
 const App = () => (
     <AuthProvider>
-        <RouterProvider />
+        <ModalProvider>
+            <RouterProvider />
+        </ModalProvider>
     </AuthProvider>
 );
 export default App;
